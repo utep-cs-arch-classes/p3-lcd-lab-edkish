@@ -76,7 +76,7 @@ Layer fieldLayer = {		/* playing field as a layer */
   (AbShape *) &fieldOutline,
   {screenWidth/2, screenHeight/2},/**< center */
   {0,0}, {0,0},				    /* last & next pos */
-  COLOR_YELLOW,
+  COLOR_RED,
   &layer1
 };
 
@@ -84,7 +84,7 @@ Layer layer0 = {		/**< Layer player */
   (AbShape *)&rect10,//&circle14
   {(screenWidth/2)-10, (screenHeight/2)+60}, /**< bit below & right of center */
   {0,0}, {0,0},				    /* last & next pos */
-  COLOR_RED, //COLOR_ORANGE
+  COLOR_BLUE, 
   &fieldLayer, //&layer1
 };
 
@@ -116,7 +116,7 @@ void movLayerDraw(MovLayer *movLayers, Layer *layers)
     l->posLast = l->pos;
     l->pos = l->posNext;
   }
-  drawString5x7(1,1,"SCORE:", COLOR_WHITE,COLOR_BLACK);
+  drawString5x7(1,1,"SURVIVE!", COLOR_WHITE,COLOR_BLACK);
   or_sr(8);			/**< disable interrupts (GIE on) */
 
 
